@@ -2,13 +2,15 @@
   "name": "aws",
   "version": "0.1.0",
   "bin": {
-    "aws": "bin/aws.js"
+    "aws": "bin/main.js"
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "bootstrap": "yarn cdk bootstrap",
+    "deploy": "yarn cdk deploy"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",

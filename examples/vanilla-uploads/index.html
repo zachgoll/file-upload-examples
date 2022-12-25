@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla uploads</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Vanilla File Upload Example</h1>
+
+    <form data-id="js-form">
+      <input type="file" name="upload" />
+      <button type="submit">Upload</button>
+    </form>
+
+    <div>
+      <h2>Uploaded files</h2>
+      <div
+        data-id="uploads-list"
+        style="display: flex; flex-direction: column; width: 350px; gap: 10px"
+      ></div>
+    </div>
+
+    <script src="client.js" type="module"></script>
+  </body>
+</html>

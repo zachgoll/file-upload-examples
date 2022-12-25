@@ -1,6 +1,14 @@
+## Initial setup
+
+The `/aws` folder of this repo was created with:
+
+```
+npx cdk init app --language typescript
+```
+
 ## Quickstart
 
-This CDK setup deploys a single Cloudformation stack. There are helpful commands in `package.json` to run.
+This CDK setup deploys a single Cloudformation stack, which will create an S3 bucket and Cloudfront distribution that points at that bucket. Additionally, I have created a CNAME pointing at the Cloudfront CDN as an example for a production setup.
 
 To get up and running, there are 3 steps.
 
@@ -22,17 +30,33 @@ region=us-east-1
 output=json
 ```
 
+### Bootstrap CDK app
+
 To get CDK initialized, you'll need to specify a region and account to deploy resources to via environment variables and [bootstrap your app](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html).
 
 ```bash
 # Make sure you are in the /aws directory of this repository
 cd aws
 
-# Add your .env file
-# Put the following two variables in it.  These specify where your CDK resources will be deployed to.
-# CDK_REGION=
-# CDK_ACCOUNT=
+# Follow .env.example
 touch .env
 
-npx
+# Bootstrap CDK
+yarn bootstrap
 ```
+
+### Deploy stack
+
+To deploy resources defined in `lib/uploads-stack.ts`, run:
+
+```
+yarn deploy
+```
+
+This will create:
+
+- An S3 bucket where file uploads will be stored
+- A Cloudfront distribution that will act as the CDN for delivering S3 assets
+- An IAM user that will be used by the AWS SDK in our app code to upload objects to S3
+  - Has a policy that restricts this user to only perform actions on our created bucket
+  - IAM access key secret is stored safely in secrets manager

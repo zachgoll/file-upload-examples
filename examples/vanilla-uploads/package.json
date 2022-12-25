@@ -1,0 +1,22 @@
+{
+  "name": "vanilla-uploads",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start:server": "yarn nodemon server.js",
+    "start:client": "yarn live-server"
+  },
+  "devDependencies": {
+    "live-server": "git+https://github.com/tapio/live-server.git#ad22544",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.238.0",
+    "busboy": "^1.6.0",
+    "dotenv": "^16.0.3",
+    "mime-types": "^2.1.35",
+    "uuid": "^9.0.0"
+  }
+}
