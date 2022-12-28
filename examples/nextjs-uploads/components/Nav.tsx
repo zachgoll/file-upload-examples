@@ -3,12 +3,16 @@ import { useRouter } from "next/router";
 
 const paths = [
   {
-    path: "/",
-    display: "Basic uploads example",
+    path: "/basic",
+    display: "Basic uploads",
   },
   {
-    path: "/signed-urls",
-    display: "Signed urls example",
+    path: "/vanilla-signed-urls",
+    display: "Vanilla signed URLs",
+  },
+  {
+    path: "/uppy-signed-urls",
+    display: "Uppy signed URLs",
   },
 ];
 

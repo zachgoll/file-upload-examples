@@ -48,7 +48,7 @@ export default async function handler(
         return s3.send(
           new PutObjectCommand({
             Bucket: process.env.AWS_BUCKET_NAME,
-            Key: `nextjs-basic-uploads/busboy/${uuid()}.${mime.extension(
+            Key: `basic-uploads/busboy/${uuid()}.${mime.extension(
               f.info.mimeType
             )}`,
             Body: f.data,

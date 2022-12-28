@@ -9,20 +9,17 @@ import multer from "multer";
 import multerS3Storage from "multer-s3";
 import { s3 } from "../../lib/s3";
 
-const multerMiddleware = multer({
-  storage: multerS3Storage({
-    s3,
-    bucket: process.env.AWS_BUCKET_NAME!,
-    key: function (req, file, cb) {
-      cb(
-        null,
-        `nextjs-basic-uploads/multer/${uuid()}.${mime.extension(file.mimetype)}`
-      );
-    },
-  }),
-})
-  // IMPORTANT: `uploadFiles` matches the `name` property of our <form /> on the frontend
-  .array("uploadFiles");
+// Where the files upload to
+const storage = multerS3Storage({
+  s3,
+  bucket: process.env.AWS_BUCKET_NAME!,
+  key: function (req, file, cb) {
+    cb(null, `basic-uploads/multer/${uuid()}.${mime.extension(file.mimetype)}`);
+  },
+});
+
+// "uploads" is the name of the form field that represents the FileList
+const multerMiddleware = multer({ storage }).array("uploads");
 
 export default nextConnect<NextApiRequest, NextApiResponse>()
   .use(multerMiddleware)

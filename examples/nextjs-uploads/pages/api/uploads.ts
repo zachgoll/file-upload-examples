@@ -11,7 +11,7 @@ export default async function handler(
       Bucket: process.env.AWS_BUCKET_NAME,
 
       // Searches a different S3 folder based on the example page we're viewing
-      Prefix: req.query.prefix as string,
+      Prefix: req.query.queryKey as string,
     })
   );
 

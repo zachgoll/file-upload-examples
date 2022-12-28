@@ -19,7 +19,7 @@ export default async function handler(
       s3,
       new PutObjectCommand({
         Bucket: process.env.AWS_BUCKET_NAME,
-        Key: `signed-url-uploads/${uuid()}.${mime.extension(
+        Key: `${req.body.folder}/${uuid()}.${mime.extension(
           req.body.mimetype
         )}`,
       }),
