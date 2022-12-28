@@ -73,6 +73,10 @@ export class UploadsStack extends cdk.Stack {
       })
     );
 
+    // Normally, only the OAI (Cloudfront) can read the S3 bucket, but we're granting
+    // read access to the user so we can run the ListObjectsV2Command to display our uploaded objects
+    uploadsBucket.grantRead(user);
+
     const accessKey = new AccessKey(this, "SdkUserAcessKey", { user });
 
     // Must store access key safely in secrets manager

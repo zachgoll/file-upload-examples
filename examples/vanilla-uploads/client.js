@@ -57,6 +57,7 @@ const App = {
         img.setAttribute("alt", "some alt value!");
         return img;
       case "mp3":
+      case "mpga":
         const audio = document.createElement("audio");
         audio.setAttribute("controls", true);
         audio.setAttribute("src", url);

@@ -1,12 +1,11 @@
 import { PutObjectCommand } from "@aws-sdk/client-s3";
-import s3 from "./s3.js";
 import { v4 as uuid } from "uuid";
+import s3 from "./s3.js";
 import busboy from "busboy";
 import mime from "mime-types";
 
-// Load .env file from root directory
 import * as dotenv from "dotenv";
-dotenv.config({ path: "../../.env" });
+dotenv.config();
 
 /**
  * Handles all requests to the HTTP server.  This is the callback
@@ -41,7 +40,7 @@ export default async function requestHandler(req, res) {
   });
 
   const extension = mime.extension(fileData.info.mimeType);
-  const Key = `${uuid()}.${extension}`;
+  const Key = `vanilla-uploads/${uuid()}.${extension}`;
 
   await s3.send(
     new PutObjectCommand({

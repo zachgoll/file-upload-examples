@@ -1,0 +1,52 @@
+{
+  "name": "basic-uploads",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.231.0",
+    "@aws-sdk/s3-request-presigner": "^3.238.0",
+    "@next/font": "13.0.7",
+    "@types/busboy": "^1.5.0",
+    "@types/node": "18.11.15",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "@uppy/aws-s3": "^3.0.4",
+    "@uppy/core": "^3.0.4",
+    "@uppy/dashboard": "^3.2.0",
+    "@uppy/drag-drop": "^3.0.1",
+    "@uppy/file-input": "^3.0.1",
+    "@uppy/progress-bar": "^3.0.1",
+    "@uppy/react": "^3.0.2",
+    "axios": "^1.2.1",
+    "busboy": "^1.6.0",
+    "eslint": "8.29.0",
+    "eslint-config-next": "13.0.7",
+    "mime-types": "^2.1.35",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1",
+    "next": "13.0.7",
+    "next-connect": "^0.13.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.40.0",
+    "swr": "^2.0.0",
+    "typescript": "4.9.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/mime-types": "^2.1.1",
+    "@types/multer": "^1.4.7",
+    "@types/multer-s3": "^3.0.0",
+    "@types/uuid": "^9.0.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4"
+  }
+}
