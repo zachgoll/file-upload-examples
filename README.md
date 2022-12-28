@@ -9,9 +9,7 @@ Below are links to code snippets that represent each example.
 - [Vanilla uploads](https://github.com/zachgoll/file-upload-examples/tree/main/examples/vanilla-uploads)
 - Basic Next.js Uploads
   - [Using Multer middleware](https://github.com/zachgoll/file-upload-examples/blob/main/examples/nextjs-uploads/pages/api/upload-with-multer.ts)
-  - [Using Busboy](https://github.com/zachgoll/file-upload-examples/blob/main/examples/nextjs-uploads/pages/api/upload-with-busboy.ts)(lower-level library that Multer uses)
-- [Multer uploads with Next.js]()
-- [Busboy uploads with Next.js](https://github.com/zachgoll/file-upload-examples/blob/main/examples/nextjs-uploads/pages/api/upload-with-busboy.ts)
+  - [Using Busboy](https://github.com/zachgoll/file-upload-examples/blob/main/examples/nextjs-uploads/pages/api/upload-with-busboy.ts) (lower-level library that Multer uses)
 - Pre-signed URLs strategy with Next.js
   - [signing endpoint](https://github.com/zachgoll/file-upload-examples/blob/main/examples/nextjs-uploads/pages/api/sign-url.ts)
   - [Vanilla implementation](https://github.com/zachgoll/file-upload-examples/blob/622043c3cddcbc33d256dbfaf9a55905e5e4a674/examples/nextjs-uploads/pages/signed-urls.tsx#L112-L140)
